@@ -26,12 +26,10 @@
 }
 .itemContent{
     display: flex;
-    width: 50%;
-    height: 40px;
-    border-radius: 20px;
+    height: 50px;
+    border-radius: 25px;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
     box-shadow: -11px -7px 10px #b9b9b9cf;
 }
 .messageContent,.startContent{
@@ -42,16 +40,20 @@
     margin-left: 20px;
     color: white;
     outline: none;
+    font-size: 1.8rem;
 }
 .startContent{
     width: 30%;
     margin-left: 1rem;
 }
 .startContent span{
-    width: 15px;
-    height: 15px;
-    border-radius: 7px;
+    width: 31px;
+    height: 31px;
+    border-radius: 15px;
     margin-left: 7px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 .addItemBut{
     position: fixed;
@@ -75,51 +77,55 @@
     display: flex;
     z-index: 99;
     width: 50%;
+    margin-top: 2rem;
 }
 .newMenu{
     display: flex;
     height: 40px;
     width: 20%;
-    margin-top: 1rem;
 }
-.isOK,.isNo{
-    font-family: iconfont;
-    width: 50%;
-    border-radius: 30px;
+.icon-isOK,.icon-isNo{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
     display: flex;
     justify-content: center;
     box-sizing: content-box;
     align-items: center;
     margin-left: 9px;
 }
+.out-shadow-red{
+    box-shadow: -11px -7px 20px #fbd5d5;
+}
+.out-shadow-orange{
+    box-shadow: -11px -7px 20px #f3dba6;
+}
+.out-shadow-green{
+    box-shadow: -11px -7px 20px #cdf985;
+}
+.icon-faster{
+    font-size: 1.2rem;
+}
+.icon-fast{
+     font-size: 1.1rem;
+ }
+.icon-normal{
+     font-size: 1.6rem;
+ }
 [class *="icon-"]{
-    font-family: icon;
+    font-family: iconfont;
     cursor: pointer;
 }
-.icon-star-empty::before{
-    content: "";
-}
-.icon-star::before{
-    content: "";
-}
-.icon-plus::before{
-    content: "";
-    font-size: 2rem;
+.icon-plus{
+    font-family: iconfont;
+    font-size: 4rem;
 }
 @font-face {
     font-family: 'iconfont';
-    src: url('iconfont.eot');
-    src: url('iconfont.eot?#iefix') format('embedded-opentype'),
-    url('iconfont.woff2') format('woff2'),
-    url('iconfont.woff') format('woff'),
-    url('iconfont.ttf') format('truetype'),
-    url('iconfont.svg#iconfont') format('svg');
-}
-@font-face {
-    font-family: "icon";
-    src: url("font/fontello.eot");
-    src: url('font/fontello.eot') format('embedded-opentype'),
-        url('font/fontello.woff') format('woff'),
-        url('font/fontello.ttf') format('truetype'),
-        url('font/fontello.svg') format('svg');
+    src: url('font/iconfont.eot');
+    src: url('font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('font/iconfont.woff2') format('woff2'),
+    url('font/iconfont.woff') format('woff'),
+    url('font/iconfont.ttf') format('truetype'),
+    url('font/iconfont.svg#iconfont') format('svg');
 }
