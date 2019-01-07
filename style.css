@@ -1,0 +1,125 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+}
+.bg-red{
+    background:rgb(214, 88, 62) !important;
+}
+.bg-yellow{
+    background:rgb(225, 237, 65) !important;
+}
+.bg-orange{
+    background:rgb(228, 181, 65) !important;
+}
+.bg-green{
+    background:rgb(106, 164, 56) !important;
+}
+.bg-gray{
+    background: rgb(204, 204, 204);
+}
+.content{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.itemContent{
+    display: flex;
+    width: 50%;
+    height: 40px;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    box-shadow: -11px -7px 10px #b9b9b9cf;
+}
+.messageContent,.startContent{
+    display: flex;
+}
+.messageContent{
+    width: 70%;
+    margin-left: 20px;
+    color: white;
+    outline: none;
+}
+.startContent{
+    width: 30%;
+    margin-left: 1rem;
+}
+.startContent span{
+    width: 15px;
+    height: 15px;
+    border-radius: 7px;
+    margin-left: 7px;
+}
+.addItemBut{
+    position: fixed;
+    bottom: 9%;
+    right: 30%;
+}
+
+.addItemCont{
+    width: 80%;
+}
+.addICBg{
+    height: 100%;
+    width: 100%;
+    background: rgba(64, 64, 64, 0.86);
+    position: absolute;
+    display: none;
+    justify-content: center;
+}
+.newItem{
+    position: relative;
+    display: flex;
+    z-index: 99;
+    width: 50%;
+}
+.newMenu{
+    display: flex;
+    height: 40px;
+    width: 20%;
+    margin-top: 1rem;
+}
+.isOK,.isNo{
+    font-family: iconfont;
+    width: 50%;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    box-sizing: content-box;
+    align-items: center;
+    margin-left: 9px;
+}
+[class *="icon-"]{
+    font-family: icon;
+    cursor: pointer;
+}
+.icon-star-empty::before{
+    content: "";
+}
+.icon-star::before{
+    content: "";
+}
+.icon-plus::before{
+    content: "";
+    font-size: 2rem;
+}
+@font-face {
+    font-family: 'iconfont';
+    src: url('iconfont.eot');
+    src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+    url('iconfont.woff2') format('woff2'),
+    url('iconfont.woff') format('woff'),
+    url('iconfont.ttf') format('truetype'),
+    url('iconfont.svg#iconfont') format('svg');
+}
+@font-face {
+    font-family: "icon";
+    src: url("font/fontello.eot");
+    src: url('font/fontello.eot') format('embedded-opentype'),
+        url('font/fontello.woff') format('woff'),
+        url('font/fontello.ttf') format('truetype'),
+        url('font/fontello.svg') format('svg');
+}
