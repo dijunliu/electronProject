@@ -1,0 +1,22 @@
+{
+  "name": "electronopject",
+  "version": "0.0.1",
+  "description": "memorandum",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dijunliu/electronProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dijunliu/electronProject/issues"
+  },
+  "homepage": "https://github.com/dijunliu/electronProject#readme",
+  "devDependencies": {
+    "electron": "^4.0.1"
+  }
+}

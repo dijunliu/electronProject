@@ -12,13 +12,12 @@ let addBut = document.getElementsByClassName("addItemBut")[0],
     newDomHtml = ' <div class="itemContent addItemCont  bg-gray">\n' +
         '                <input class="messageContent">\n' +
         '                <div class="startContent">\n' +
-        '                    <span title="优先级为一" name="red" class="bg-red icon-faster">&#xe641;</span>\n' +
-        '                    <span title="优先级为二" name="orange" class="bg-orange icon-fast">&#xe649;</span>\n' +
-        '                    <span title="优先级为三" name="green" class="bg-green icon-normal">&#xe618;</span>\n' +
+        '                    <span title="优先级为一" name="red" class="icon-faster bg-red">&#xe641;</span>\n' +
+        '                    <span title="优先级为二" name="orange" class="icon-fast bg-orange">&#xe649;</span>\n' +
         '                </div>\n' +
         '            </div>\n' +
         '            <div class="newMenu">\n' +
-        '                <span class="icon-isOK bg-green">&#xe502;</span>\n' +
+        '                <span class="icon-isOk bg-green">&#xe502;</span>\n' +
         '                <span class="icon-isNo bg-red">&#xe654;</span>\n' +
         '            </div>',
     content = document.getElementsByClassName('content')[0];
@@ -34,11 +33,13 @@ addBut.addEventListener("click",function () {
     if(window.getComputedStyle(addICBg,null).getPropertyValue("display") === "none"){
         addICBg.style.display = 'flex';
         let newDom = document.createElement('div'),
-            itemFirstC = content.children[0];
+            itemFirstC = content.children[0],
+            bgColor = '';
         newDom.className = "newItem";
         newDom.innerHTML = newDomHtml;
         content.insertBefore(newDom,itemFirstC);
-        let isOkBut = document.getElementsByClassName('icon-isOK')[0],
+        let isOkBut = document.getElementsByClassName('icon-isOk')[0],
+            isNoBut = document.getElementsByClassName('icon-isNo')[0],
             colorBut = document.getElementsByClassName('startContent')[0],
             colorButArray = toArray(colorBut.children);
         //确认添加按钮
@@ -46,13 +47,22 @@ addBut.addEventListener("click",function () {
             newDom.children[0].children[1].remove();
             newDom.children[1].remove();
             newDom.children[0].children[0].style.width = "100%";
+            newDom.children[0].children[0].setAttribute("readonly","readonly");
             content.children[0].children[0].style.width = "100%";
+            addICBg.style.display = 'none';
+            newDom.children[0].className += "  out-shadow-"+(bgColor?bgColor:"gray");
+            newDom.style.zIndex = '0';
+        })
+        //删除按钮
+        isNoBut.addEventListener("click",function () {
+            newDom.remove();
             addICBg.style.display = 'none';
         })
         //改变颜色按钮
         colorButArray.forEach(function (element) {
             element.addEventListener("click",function () {
-                newDom.children[0].className += " "+element.className;
+                bgColor = element.getAttribute("name");
+                newDom.children[0].className = "itemContent addItemCont  bg-"+bgColor;
             })
         })
 
