@@ -4,6 +4,10 @@
     border: none;
     background: none;
 }
+body{
+    display: flex;
+    justify-content: center;
+}
 .bg-red{
     background:rgb(214, 88, 62) !important;
 }
@@ -23,6 +27,7 @@
     display: flex;
     flex-flow: column;
     align-items: center;
+    width: 70%;
 }
 .itemContent{
     display: flex;
@@ -30,21 +35,22 @@
     border-radius: 25px;
     justify-content: center;
     align-items: center;
-    box-shadow: -11px -7px 10px #b9b9b9cf;
 }
 .messageContent,.startContent{
     display: flex;
 }
 .messageContent{
-    width: 70%;
-    margin-left: 20px;
+    width: 75%;
     color: white;
     outline: none;
     font-size: 1.8rem;
+    box-sizing: border-box;
+    padding-left: 18px;
 }
 .startContent{
-    width: 30%;
-    margin-left: 1rem;
+    width: 25%;
+    padding-left: 19px;
+    box-sizing: border-box;
 }
 .startContent span{
     width: 31px;
@@ -76,7 +82,7 @@
     position: relative;
     display: flex;
     z-index: 99;
-    width: 50%;
+    width: 100%;
     margin-top: 2rem;
 }
 .newMenu{
@@ -84,7 +90,7 @@
     height: 40px;
     width: 20%;
 }
-.icon-isOK,.icon-isNo{
+.icon-isOk,.icon-isNo{
     width: 50px;
     height: 50px;
     border-radius: 25px;
@@ -100,8 +106,8 @@
 .out-shadow-orange{
     box-shadow: -11px -7px 20px #f3dba6;
 }
-.out-shadow-green{
-    box-shadow: -11px -7px 20px #cdf985;
+.out-shadow-gray{
+    box-shadow: -11px -7px 10px #b9b9b9cf;
 }
 .icon-faster{
     font-size: 1.2rem;
