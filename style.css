@@ -35,6 +35,7 @@ body{
     border-radius: 25px;
     justify-content: center;
     align-items: center;
+    transition: all 1s;
 }
 .messageContent,.startContent{
     display: flex;
@@ -134,4 +135,12 @@ body{
     url('font/iconfont.woff') format('woff'),
     url('font/iconfont.ttf') format('truetype'),
     url('font/iconfont.svg#iconfont') format('svg');
+}
+@keyframes down {
+    0% {
+        top: -85px;
+    }
+    100% {
+        top: 0px;
+    }
 }

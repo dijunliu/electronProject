@@ -8,7 +8,7 @@ let addBut = document.getElementsByClassName("addItemBut")[0],
     addIC = document.getElementsByClassName("addItemCont")[0],
     startBut = toArray(document.getElementsByClassName("startBut")),
     addICBg = document.getElementsByClassName("addICBg")[0],
-
+    localDLength = localStorage.length,
     newDomHtml = ' <div class="itemContent addItemCont  bg-gray">\n' +
         '                <input class="messageContent">\n' +
         '                <div class="startContent">\n' +
@@ -28,12 +28,19 @@ startBut.forEach(function (element) {
         element.className = (element.className == "icon-star-empty startBut"?"icon-star startBut":"icon-star-empty startBut");
     })
 })
-if(localStorage.getItem("message")){
-    let newDom = document.createElement('div'),
-        itemFirstC = content.children[0];
-    newDom.className = "newItem";
-    newDom.innerHTML = localStorage.getItem("message");
-    content.insertBefore(newDom,itemFirstC);
+if(localDLength){
+    let num = 0;
+    while (localDLength--){
+        let newDom = document.createElement('div'),
+            itemFirstC = content.children[0];
+        newDom.className = "newItem";
+        newDom.style.zIndex = '0';
+        newDom.innerHTML = localStorage.getItem(num).split("`")[0];
+        newDom.children[0].children[0].value = localStorage.getItem(num).split('`')[1];
+        log(newDom.children[0].children[0]);
+        num++;
+        content.insertBefore(newDom,itemFirstC);
+    }
 }
 addBut.addEventListener("click",function () {
     if(window.getComputedStyle(addICBg,null).getPropertyValue("display") === "none"){
@@ -44,6 +51,7 @@ addBut.addEventListener("click",function () {
         newDom.className = "newItem";
         newDom.innerHTML = newDomHtml;
         content.insertBefore(newDom,itemFirstC);
+        newDom.style.animation = 'down 2s';
         let isOkBut = document.getElementsByClassName('icon-isOk')[0],
             isNoBut = document.getElementsByClassName('icon-isNo')[0],
             colorBut = document.getElementsByClassName('startContent')[0],
@@ -58,7 +66,7 @@ addBut.addEventListener("click",function () {
             addICBg.style.display = 'none';
             newDom.children[0].className += "  out-shadow-"+(bgColor?bgColor:"gray");
             newDom.style.zIndex = '0';
-            localStorage.setItem("message",newDom.children[0].children[0].value);
+            localStorage.setItem(localDLength++,newDom.innerHTML+"`"+newDom.children[0].children[0].value);
         })
         //删除按钮
         isNoBut.addEventListener("click",function () {
