@@ -15,3 +15,6 @@
     /* transform-style: preserve-3d; */
     /* perspective: 60rem; */
 }
+.book+div{
+    background: aliceblue;
+}

@@ -4,10 +4,27 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link type="text/css" rel="stylesheet" href="style2.css">
+    <script type="text/javascript" src="jquery.min.1.7.js"></script>
+    <script type="text/javascript" src="turn.js"></script>
 </head>
 <body>
-    <div class="bg">
-        <div class="content">你好！</div>
+    <div class="book">
+        <div class="hard"> Turn.js </div>
+        <div class="hard"></div>
+        <div> Page 1 </div>
+        <div> Page 2 </div>
+        <div> Page 3 </div>
+        <div> Page 4 </div>
+        <div class="hard"></div>
+        <div class="hard"></div>
     </div>
+    <script type="text/javascript">
+        var book =document.getElementsByClassName('book')[0];
+        $(".book").turn({
+            width:400,
+            height:300,
+            autoCenter:true
+        })
+    </script>
 </body>
 </html>
