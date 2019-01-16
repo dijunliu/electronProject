@@ -1,0 +1,76 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: url("img/bg1.png") repeat;
+}
+.book{
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+
+}
+.book::after{
+    content: "";
+    width: 400px;
+    height: 50px;
+    border: 5px solid transparent;
+
+    border-image: url(img/bg2.jpg) repeat;
+    border-image-slice: 0 0 5 0;
+    position: absolute;
+    left: 0;
+    animation: borderAnimation 2s;
+}
+/*.side{*/
+    /*width:5px;*/
+    /*height:600px;*/
+    /*position:absolute;*/
+    /*top:0;*/
+    /*left:475px;*/
+    /*background:-webkit-gradient(linear, left top, right top, color-stop(0, #333), color-stop(0.5,  #666), color-stop(1,  #333));*/
+    /*background-image:-webkit-linear-gradient(left, #333, #666, #333);*/
+    /*background-image:-moz-linear-gradient(left, #333, #666, #333);*/
+    /*background-image:-ms-linear-gradient(left, #333, #666, #333);*/
+    /*background-image:-o-linear-gradient(left, #333, #666, #333);*/
+    /*background-image:linear-gradient(left, #333, #666, #333);*/
+    /*-webkit-transform:rotateY(-90deg);*/
+    /*-moz-transform:rotateY(-90deg);*/
+    /*-o-transform:rotateY(-90deg);*/
+    /*-ms-transform:rotateY(-90deg);*/
+    /*transform:rotateY(-90deg);*/
+    /*-webkit-transform-origin:top right;*/
+    /*-moz-transform-origin:top right;*/
+    /*-o-transform-origin:top right;*/
+    /*-ms-transform-origin:top right;*/
+    /*transform-origin:top right;*/
+    /*z-index:100000;*/
+    /*visibility: visible;*/
+/*}*/
+.one{
+    background:url("img/book-covers.jpg");
+}
+.two{
+    background:url("img/book-covers.jpg") -480px 0px;
+}
+.three{
+    background:url("img/book-covers.jpg") -480px 0px;
+}
+.four{
+    background:url("img/book-covers.jpg") -480px 0px;
+}
+.five{
+    background:url("img/book-covers.jpg") -960px 0px;
+}
+.six{
+    background:url("img/book-covers.jpg") -1440px 0px;
+}
+@keyframes borderAnimation {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 400px;
+    }
+}

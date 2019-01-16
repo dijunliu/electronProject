@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jquery.min.1.7.js"></script>
+    <script type="text/javascript" src="turn.js"></script>
+    <link type="text/css" rel="stylesheet" href="style(book).css">
+</head>
+<body>
+    <div id="flipbook">
+        <div depth="5" class="hard one"><div class="side"></div> </div>
+        <div class="hard two"></div>
+        <div class="three"></div>
+        <div class="four"></div>
+        <div class="hard five"></div>
+        <div class="hard six"></div>
+    </div>
+    <script type="text/javascript">
+        $("#flipbook").turn({
+            width:960,
+            height:600,
+            display: 'double',
+            inclination:50,
+            // when:{
+            //     turned:function (event,page,pageObj) {
+            //         alert(`这是第${page}页`);
+            //     }
+            // }
+        })
+    </script>
+</body>
+</html>
