@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="six">
+        <span class="d1"></span>
+        <span class="d2"></span>
+        <span class="d3"></span>
+        <span class="d4"></span>
+        <span class="d5"></span>
+        <span class="d6"></span>
+        <span class="d7"></span>
+    </div>
+    <input id="infor">
+    <button onclick="Time()">这是个按钮</button>
+
+    <script type="text/javascript">
+
+        //初始化检测是否存在localStorage
+        window.onload = function () {
+            if(localStorage.length > 0){
+                Time();
+            }
+
+        }
+        let audio = new Audio();
+        audio.src = "audio.wav";
+
+        //系统通知函数
+        function Note() {
+            if(!("Notification" in window)){
+                alert('你的浏览器不支持Notification API!!!');
+            }else if(Notification.permission === "granted"){
+                let notif = new Notification('闹钟提示',{
+                    body:`您设置的时长秒的闹钟时间到了噢`,
+                    icon:'img/images.png',
+                    image:'img/images.png'});
+            }else if(Notification.permission !== "denied"){
+                alert('请允许我能通知到您！！！');
+                Notification.requestPermission(function (permission) {
+                    if(permission === "granted"){
+                        let notifi = new Notification('闹钟提示',{
+                            body:`您设置的时长秒的闹钟时间到了噢`,
+                            icon:'img/images.png',
+                            image:'img/images.png',});
+                    }
+                })
+            }
+
+        }
+
+        //闹钟提示函数
+        function Time() {
+            if(localStorage.length > 0){
+                var Tduration = localStorage.getItem(0).split(',')[0],
+                    Tinit = localStorage.getItem(0).split(',')[1];
+            }else{
+                var Tduration = document.getElementById('infor').value,
+                    Tinit = Date.now()/1000;
+
+                localStorage.setItem(0,Tduration+","+Tinit);
+            }
+            let check = window.setInterval(checkTime,1000);
+            function checkTime() {
+                let now = Date.now()/1000;
+                log(now - Tinit);
+                if(now - Tinit >= Tduration){
+                    audio.play();
+                    Note();
+                    window.clearInterval(check);
+                    localStorage.clear();
+                }
+            }
+        }
+
+
+
+        function log(infor) {
+            console.log(infor);
+        }
+    </script>
+</body>
+</html>
