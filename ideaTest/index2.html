@@ -6,10 +6,90 @@
     <link type="text/css" rel="stylesheet" href="style2.css">
 </head>
 <body>
-    <div class="book">
-        你好吗我的朋友们！!
-    </div>
+    <textarea id="textBox2" style="height: 20rem;width: 30rem;background: azure">
+
+    </textarea>
+    <div id="textBox"></div>
     <script type="text/javascript">
+        let list = document.getElementById("textBox");
+        for (let i=0;i<5;i++){
+            let item = document.createElement("li");
+            item.appendChild(document.createTextNode(`item,${i}`));
+            let j = i;
+            item.onclick = function () {
+                alert(j);
+            }
+            list.appendChild(item);
+        }
+
+        // class Pen {
+        //     constructor(name){
+        //         this.name = name;
+        //     }
+        //     sayName() {
+        //         console.log(this.name);
+        //     }
+        // }
+        // let pen1 = new Pen("hero");
+        // console.log(pen1);
+        //
+        // let names = ["liu","di","jun"];
+        // console.log(names.map(name => name.length));
+        //
+        // function Person() {
+        //     this.age = 1;
+        //     setInterval(() => this.age++,1000)
+        // }
+        //
+        // let p = new Person();
+
+        // let textBox = document.getElementById("textBox");
+        // textBox.addEventListener("input",function (e) {
+        //     alert("有输入！！");
+        // });
+
+        // 工厂模式
+        // function pen() {
+        //     let o = new Object();
+        //     o.name = 'hero';
+        //     o.pice = 20;
+        //     return o;
+        // }
+        // let pencil = pen();
+        // console.log(pencil.hasOwnProperty('name'));
+
+
+        //构造函数模式
+        // function Pen(name,price){
+        //     this.name = name;
+        //     this.price = price;
+        //     this.sayName = f;
+        // }
+        // function f(){
+        //     console.log(this.name);
+        // }
+        // let pencil1 = new Pen("hero",20);
+        // let pencil2 = new Pen("link",120);
+
+
+        //原型模式
+        // function Pen(name,price){
+        //
+        // }
+        //
+        // let pencil1 = new Pen("hero",20);
+        //
+        //
+        // Pen.prototype = {
+        //     name:'nihao',
+        //     price:999,
+        //     sayName:function () {
+        //         alert();
+        //     }
+        // };
+        // let pencil2 = new Pen();
+        // console.log(pencil1);
+        // console.log(pencil2);
     </script>
 </body>
 </html>
